@@ -1,0 +1,114 @@
+{
+    "name": "srijanone/ezdevportal-project",
+    "description": "Project creator for EzDevPortal Distribution.",
+    "type": "composer-plugin",
+    "license": "GPL-2.0-or-later",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/srijanone/ezdevportal.git"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "process-timeout": 0,
+        "allow-plugins": {
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true
+        }
+    },
+    "require": {
+        "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/core-composer-scaffold": "^9.2",
+        "drush/drush": "^10.6",
+        "oomphinc/composer-installers-extender": "^2.0",
+        "srijanone/ezdevportal": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "quick-start": [
+            "composer install",
+            "php docroot/core/scripts/drupal quick-start opendevportal"
+        ]
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./"
+            }
+        },
+        "installer-paths": {
+            "core": [
+                "type:drupal-core"
+            ],
+            "modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ]
+        },
+        "patches": {
+            "drupal/core": {
+                "leaked cache metadata": "https://www.drupal.org/files/issues/2020-09-10/2638686-43.patch",
+                "Layout Builder getLabel" : "https://www.drupal.org/files/issues/2020-04-08/2985882-field-85.patch",
+                "Expose Layout Builder data to REST and JSON:API" : "https://www.drupal.org/files/issues/2021-11-22/layout_builder-rebase_drupal_9_3_x-2942975-159.patch"
+            }
+        },
+        "drupal-core-project-message": {
+            "include-keys": [
+                "homepage",
+                "support"
+            ],
+            "post-create-project-cmd-message": [
+                "<bg=blue;fg=white>                                                         </>",
+                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
+                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
+                "<bg=blue;fg=white>                                                         </>",
+                "",
+                "<bg=yellow;fg=black>Next steps</>:",
+
+                "  * Install the site: https://www.drupal.org/docs/8/install",
+                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
+                "  * Get support: https://www.drupal.org/support",
+                "  * Get involved with the Drupal community:",
+                "      https://www.drupal.org/getting-involved",
+                "  * Remove the plugin that prints this message:",
+                "      composer remove drupal/core-project-message"
+            ]
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ]
+    }
+}

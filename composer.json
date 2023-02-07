@@ -11,10 +11,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/srijanone/ezdevportal.git"
         }
     ],
     "config": {
@@ -33,8 +29,8 @@
         "drupal/core-composer-scaffold": "^9.2",
         "drush/drush": "^10.6",
         "oomphinc/composer-installers-extender": "^2.0",
-        "drupal/ctools": "3.11",
-        "srijanone/ezdevportal": "dev-master"
+        "drupal/ctools": "^3.13",
+        "srijanone/ezdevportal": "^1.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

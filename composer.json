@@ -5,6 +5,10 @@
     "license": "GPL-2.0-or-later",
     "repositories": [
         {
+            "type":"vcs",
+            "url":"https://git.drupalcode.org/issue/better_normalizers-3286221"
+        },
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
@@ -20,17 +24,20 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "composer/installers": true,
-            "oomphinc/composer-installers-extender": true
+            "oomphinc/composer-installers-extender": true,
+            "drupal/core-project-message": true
         }
     },
     "require": {
-        "composer/installers": "^1.2",
+        "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
-        "drupal/core-composer-scaffold": "^9.2",
-        "drush/drush": "^10.6",
+        "drupal/core-composer-scaffold": "^10.1",
+        "drupal/core-project-message": "^10.1",
+        "drupal/core-recommended": "^10.1",
+        "drush/drush": "^12.1",
         "oomphinc/composer-installers-extender": "^2.0",
         "drupal/ctools": "^3.13",
-        "srijanone/ezdevportal": "^1.0"
+        "srijanone/ezdevportal": "^2.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -77,7 +84,7 @@
         "patches": {
             "drupal/core": {
                 "leaked cache metadata": "https://www.drupal.org/files/issues/2020-09-10/2638686-43.patch",
-                "Expose Layout Builder data to REST and JSON:API" : "https://www.drupal.org/files/issues/2022-12-05/2942975-217.patch"
+                "Expose Layout Builder data to REST and JSON:API" : "https://www.drupal.org/files/issues/2023-08-14/2942975-241.patch"
             }
         },
         "drupal-core-project-message": {

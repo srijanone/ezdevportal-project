@@ -77,7 +77,6 @@
         "patches": {
             "drupal/core": {
                 "leaked cache metadata": "https://www.drupal.org/files/issues/2020-09-10/2638686-43.patch",
-                "Layout Builder getLabel" : "https://www.drupal.org/files/issues/2020-04-08/2985882-field-85.patch",
                 "Expose Layout Builder data to REST and JSON:API" : "https://www.drupal.org/files/issues/2022-12-05/2942975-217.patch"
             }
         },
